@@ -9,6 +9,22 @@
 </head>
 <body>
 
+
+    <script>
+        let bg = document.querySelector('#bgy');
+        let bgArr = ['bg-gradient-to-t','from-purple-300','via-slate-800','to-rose-400','bg-gradient-to-b','from-pink-500','via-violet-800','to-blue-200','bg-gradient-to-r','from-slate-500','via-emerald-800','to-green-300','bg-gradient-to-l','from-amber-200','via-black','to-blue-700']
+        let currBg = ['bg-gradient-to-bl','from-sky-700','via-purple-400','to-current']
+        let i = 0;
+        setInterval(()=>{
+            for(let j = 0; j < 4; j++)
+                bg.classList.remove(currBg[j])
+            for(let j = 0; j < 4; j++){
+                bg.classList.add(bgArr[i]);
+                currBg[j] = bgArr[i++];
+            }
+            i = i%bgArr.length;
+        },3000)
+    </script>
 </body>
 </html>
 
